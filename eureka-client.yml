@@ -1,0 +1,25 @@
+server:
+port: 8098    #default port where the service will be started
+eureka:
+registerwithEureka: true
+fetchregistry: true
+instance:
+ leaseRenewalIntervalInSeconds: 1
+ leaseExpirationDurationInSeconds: 2
+client:
+ serviceUrl:
+   defaultZone: http://172.23.239.151:8761/eureka/
+ healthcheck:
+   enabled: true
+ lease:
+   duration: 5
+spring:
+application:
+ name: eureka-client   #current service name to be used by the eureka server
+cloud:
+ config:
+   uri: http://172.23.239.82:8099
+data:
+ mongodb:
+   host: 172.23.239.163
+   database: admin
